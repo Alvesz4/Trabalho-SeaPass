@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserva Confirmada</title>
+  <link rel="stylesheet" href="../css/finali.css">
+</head>
+<body>
+
+  <div class="reserva-container">
+    <h1 id="titulo-confirmacao" style="display: none;">🎉 Reserva Confirmada!</h1>
+    <div id="reserva-detalhes"></div>
+    <a class="btn-voltar" href="inicio.html">⬅ Voltar para o Início</a>
+  </div>
+
+  <script>
+    const reserva = JSON.parse(localStorage.getItem("reservaUsuario"));
+
+    if (reserva) {
+      document.getElementById("titulo-confirmacao").style.display = "block";
+      document.getElementById("reserva-detalhes").innerHTML = `
+        <p><strong>Nome:</strong> ${reserva.nome}</p>
+        <p><strong>Email:</strong> ${reserva.email}</p>
+        <p><strong>Telefone:</strong> ${reserva.telefone}</p>
+        <p><strong>CPF:</strong> ${reserva.cpf}</p>
+        <p><strong>Check-in:</strong> ${reserva.checkin}</p>
+        <p><strong>Check-out:</strong> ${reserva.checkout}</p>
+        <p><strong>Adultos:</strong> ${reserva.adultos}</p>
+        <p><strong>Crianças:</strong> ${reserva.criancas}</p>
+        <p><strong>Bebês:</strong> ${reserva.bebes}</p>
+        <p><strong>Idade das Crianças:</strong> ${reserva.idadeCriancas || 'Não informado'}</p>
+        <p><strong>Hotel:</strong> ${reserva.hotel}</p>
+        <p><strong>Total da Reserva:</strong> ${reserva.total}</p>
+      `;
+
+      setTimeout(() => {
+        localStorage.removeItem("reservaUsuario");
+      }, 1000);
+    } else {
+      document.getElementById("titulo-confirmacao").style.display = "none";
+      document.getElementById("reserva-detalhes").innerHTML = "<p>⚠ Nenhuma reserva encontrada.</p>";
+    }
+  </script>
+
+</body>
+</html>

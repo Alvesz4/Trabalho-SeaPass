@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-image: url('../img/fabio-fistarol-P89LffAnja8-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.reserva-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #2e7e5d;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.btn-voltar {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 25px;
+  background-color: #2e7e5d;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-voltar:hover {
+  background-color: #276b4c;
+}
